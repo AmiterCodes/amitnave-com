@@ -1,9 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  const setVanta = () => {
+  const setVanta = async () => {
+    await import(
+      "https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"
+    );
+    console.log(window.VANTA);
+    console.log(window.THREE);
     // @ts-ignore
-
     window.VANTA.GLOBE({
       el: "#vanta",
       mouseControls: true,
@@ -20,9 +24,7 @@
 
 <svelte:head>
   <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"
+    src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"
     on:load={setVanta}></script>
 </svelte:head>
 
