@@ -9,8 +9,8 @@
       mouseControls: true,
       touchControls: true,
       gyroControls: true,
-      minHeight: 700.0,
-      minWidth: 600.0,
+      minHeight: 100.0,
+      minWidth: 100.0,
       scale: 1.0,
       scaleMobile: 1.0,
       backgroundColor: 0xffffff,
@@ -37,18 +37,17 @@
   main {
     text-align: center;
     padding: 1em;
-    max-width: 240px;
+    min-height: 80vh;
     margin: 0 auto;
   }
 
   .text {
     position: absolute;
     top: 10rem;
-    left: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
   p {
-    position: absolute;
-    left: 5rem;
     margin-top: 0.1rem;
     font-size: 1rem;
   }
@@ -62,6 +61,14 @@
   @media (min-width: 640px) {
     main {
       max-width: none;
+    }
+
+    h1 {
+      font-size: 5em;
+    }
+
+    .text {
+      left: 20rem;
     }
   }
 </style>
